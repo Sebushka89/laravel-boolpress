@@ -7,11 +7,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
 
 .posts-container {
     background-color: #fff;
 
-    table {
+    table th, .table td {
+            vertical-align: middle!important;
         img {
             width: 150px;
         }

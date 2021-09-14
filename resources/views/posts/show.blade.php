@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container posts-container">
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>
@@ -11,6 +11,7 @@
         <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">Picture</th>
+        <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +22,7 @@
             <td>{{$post->author}}</td>
             <td><img src="{{$post->cover}}" alt="picture of {{$post->author}}" /></td>
             <!-- a href="/posts/{{$post->id}}" -->
-            <!--<td><a href="{{ route('posts.show', $post) }}"><i class="bi bi-zoom-in"></i></a></td>-->
+            <td><a href="{{ route('posts.index') }}"><i class="bi bi-zoom-out"></i></a></td>
         </tr>
     </tbody>
     </table>
