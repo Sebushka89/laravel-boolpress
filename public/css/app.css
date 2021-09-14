@@ -10942,8 +10942,11 @@ a.text-dark:focus {
   }
 }
 
-img {
-  width: 50%;
-  margin: 0 auto;
+.posts-container {
+  background-color: #fff;
+}
+
+.posts-container table img {
+  width: 150px;
 }
 

@@ -20,14 +20,4 @@
         </div>
     </div>
 </div>
-
-    @foreach($allPosts as $post)
-        <div class="card text-center">
-            <h2>{{$post->title}}</h2>
-            <div>{{$post->data}} </div>
-            <img src="{{ $post->cover }}" 
-            alt="immagine del post {{$post->title}}"/>
-            <p>Author: {{$post->author}}</p>
-        </div>
-    @endforeach
 @endsection
