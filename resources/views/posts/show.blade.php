@@ -17,7 +17,7 @@
     <tbody>
         <tr>
             <th scope="row">{{$post->id}}</th>
-            <td>{{$post->data}}</td>
+            <td>{{$post->created_at}}</td>
             <td>{{$post->title}}</td>
             <td>{{$post->author}}</td>
             <td><img src="{{$post->cover}}" alt="picture of {{$post->author}}" /></td>

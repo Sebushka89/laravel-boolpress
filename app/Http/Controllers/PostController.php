@@ -17,7 +17,7 @@ class PostController extends Controller
     {
         $allPosts = post::all();
         
-
+        //chiamato il view posts.index perche index.blade.php si trova dentro la cartella posts(creata da me) su view 
         return view('posts.index',compact('allPosts'));
     }
 
@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -39,7 +39,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cover' => 'url'
+        ]);
+
+        $data = $request->all(); // ritorna tutti i valori del form in un array associativo
+
+
+        /*
+        if(key_exists('brand_new', $data)) {
+            $brand_new = true;
+        } else {
+            $brand_new = false;
+        }
+        */
+
+        $post = new post();
+    
+        $post->title = $data['title'];
+        $post->author = $data['author'];
+        $post->cover = $data['cover'];
+        $post->data = $data['data'];
+        
+        //$post->brand_new = key_exists('brand_new', $data) ? true: false;
+        $post->save();  // salva nel database
+        
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

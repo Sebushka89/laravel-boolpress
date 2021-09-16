@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="container posts-container">
+    <a href="{{ route('posts.create') }}"><button class="btn btn-primary">Add Post</button></a>
+    <br>
     <table class="table text-center ">
     <thead>
         <tr>
@@ -18,12 +20,14 @@
         @foreach($allPosts as $post)
             <tr>
                 <th scope="row">{{$post->id}}</th>
-                <td>{{$post->data}}</td>
+                <td>{{$post->created_at}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->author}}</td>
                 <td><img src="{{$post->cover}}" alt="picture of {{$post->author}}" /></td>
                 <!-- a href="/posts/{{$post->id}}" -->
-                <td><a href="{{ route('posts.show', $post) }}"><i class="bi bi-zoom-in"></i></a></td>
+                <td><a href="{{ route('posts.show', $post) }}"><i class="bi bi-zoom-in"></i></a><i class="bi bi-trash"><i class="bi bi-arrow-repeat"></i>
+                </i>
+                </td>
             </tr>
         @endforeach
     </tbody>
