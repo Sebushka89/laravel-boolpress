@@ -87,10 +87,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(post $post)
     {
-        //
-    }
+        return view('posts.edit', compact('post'));    }
 
     /**
      * Update the specified resource in storage.
@@ -99,9 +98,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, post $post)
     {
-        //
+        $data = $request->all();       
+
+        // $data['brand_new'] = key_exists('brand_new', $data) ? true: false;
+        // $car->update($data);  // update = fill + save
+        $post->title = $data['title'];
+        $post->author = $data['author'];
+        $post->cover = $data['cover'];
+        $post->data = $data['data'];
+        $post->save();
+        //$this->fillAndSavePost($post, $data);
+
+        return redirect()->route('posts.show', compact('post'));
     }
 
     /**
@@ -110,8 +120,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(post $post)
     {
-        //
+        $post->delete();
+        
+        return redirect()->route('posts.index');  
     }
 }
