@@ -22,7 +22,13 @@
             <td>{{$post->author}}</td>
             <td><img src="{{$post->cover}}" alt="picture of {{$post->author}}" /></td>
             <!-- a href="/posts/{{$post->id}}" -->
-            <td><a href="{{ route('posts.index') }}"><i class="bi bi-zoom-out"></i></a></td>
+            <td>
+                <a href="{{ route('posts.index') }}">
+                    <button class="btn btn-primary">
+                        <i class="bi bi-zoom-out"></i>
+                    </button>
+                </a>
+            </td>
         </tr>
     </tbody>
     </table>

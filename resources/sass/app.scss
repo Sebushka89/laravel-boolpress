@@ -13,11 +13,16 @@
 .posts-container {
     background-color: #fff;
 
-    table th, .table td {
+    .table th, .table td {
             vertical-align: middle!important;
         img {
             width: 150px;
         }
     }
-
+    .modal-title{
+        color: #fff;
+    }
+    .close{
+        color: #fff;
+    }
 }
