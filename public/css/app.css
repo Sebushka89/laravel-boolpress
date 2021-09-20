@@ -12332,6 +12332,23 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: cornflowerblue;
+}
+
+body .card-img-top {
+  padding-top: 15px;
+  height: 205px;
+}
+
+body .card-body {
+  height: 100px;
+}
+
+body .yellow {
+  margin-bottom: 15px;
+}
+
 .posts-container {
   background-color: #fff;
 }
@@ -12343,7 +12360,8 @@ a.text-dark:focus {
 
 .posts-container .table th img,
 .posts-container .table td img {
-  width: 150px;
+  width: 200px;
+  height: 150px;
 }
 
 .posts-container .modal-title {

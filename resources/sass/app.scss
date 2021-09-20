@@ -9,14 +9,27 @@
 
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
-
+body{
+    background-color: cornflowerblue;
+    .card-img-top{
+        padding-top: 15px;
+        height: 205px;
+    }
+    .card-body{
+        height: 100px;
+    }
+    .yellow{
+        margin-bottom: 15px;
+    }
+}
 .posts-container {
     background-color: #fff;
 
     .table th, .table td {
             vertical-align: middle!important;
         img {
-            width: 150px;
+            width: 200px;
+            height: 150px;
         }
     }
     .modal-title{

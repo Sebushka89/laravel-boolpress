@@ -2,22 +2,24 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <!-- lista dei libri --> 
 
+    <div class="row">
+
+        @foreach($posts as $post)
+            <div class="card col-md-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ $post->cover }}" alt="Card image cap">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                    <h5 class="card-title">{{ $post->title }}</h5>
+                    <p class="card-text">{{ $post->author }}</p>    
                 </div>
+                @if(Auth::check())
+                    <a href="{{ route('posts.show', $post) }}" class="btn yellow btn-warning">Modify</a>
+                @endif 
             </div>
-        </div>
+        @endforeach
+
     </div>
+
 </div>
 @endsection
