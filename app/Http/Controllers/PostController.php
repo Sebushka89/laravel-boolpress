@@ -21,7 +21,7 @@ class PostController extends Controller
     
     public function index()
     {
-        $allPosts = post::paginate(10);
+        $allPosts = post::paginate(12);
         
         //chiamato il view posts.index perche index.blade.php si trova dentro la cartella posts(creata da me) su view 
         return view('posts.index',compact('allPosts'));
@@ -132,4 +132,12 @@ class PostController extends Controller
         
         return redirect()->route('posts.index');  
     }
+    // private function fillAndSavePost(Book $book, Request $request) {
+
+    //     $data = $request->all(); // data è un array
+    //     $post->title = $data['title'];
+    //     $post->author = $data['author'];
+    //     $post->cover = $data['cover'];
+    //     $post->data = $data['data'];
+    // }
 }

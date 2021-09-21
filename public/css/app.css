@@ -12351,6 +12351,8 @@ body .yellow {
 
 .posts-container {
   background-color: #fff;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .posts-container .table th,
