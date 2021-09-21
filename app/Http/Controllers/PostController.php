@@ -21,7 +21,7 @@ class PostController extends Controller
     
     public function index()
     {
-        $allPosts = post::all();
+        $allPosts = post::paginate(10);
         
         //chiamato il view posts.index perche index.blade.php si trova dentro la cartella posts(creata da me) su view 
         return view('posts.index',compact('allPosts'));
