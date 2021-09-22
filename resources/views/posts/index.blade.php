@@ -13,6 +13,7 @@
         <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">Picture</th>
+        <th scope="col">Category</th>
         <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -25,6 +26,7 @@
                 <td>{{$post->author}}</td>
                 <td><img src="{{$post->cover}}" alt="picture of {{$post->author}}" /></td>
                 <!-- a href="/posts/{{$post->id}}" -->
+                <td>{{ $post->category->name }}</td>
                 <td>
                     <div class="d-flex align-items-center justify-content-end">
                         <a href="{{ route('posts.show', $post) }}">

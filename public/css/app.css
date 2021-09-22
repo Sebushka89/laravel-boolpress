@@ -12342,7 +12342,8 @@ body .card-img-top {
 }
 
 body .card-body {
-  height: 100px;
+  height: 150px;
+  font-style: oblique;
 }
 
 body .yellow {

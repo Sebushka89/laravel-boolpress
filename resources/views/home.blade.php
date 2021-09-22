@@ -11,7 +11,8 @@
                 <img class="card-img-top" src="{{ $post->cover }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
-                    <p class="card-text">{{ $post->author }}</p>    
+                    <p class="card-text">{{ $post->author }}</p>
+                    {{-- <p >Categoria: {{ $post->category->name }}</p>    --}}
                 </div>
                 @if(Auth::check())
                     <a href="{{ route('posts.show', $post) }}" class="btn yellow btn-warning">Modify</a>

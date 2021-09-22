@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\post;
 
+use App\Category;
+
 class PostController extends Controller
 {
     /**
@@ -34,7 +36,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', compact('categories'));
     }
 
     /**
@@ -66,6 +69,7 @@ class PostController extends Controller
         $post->author = $data['author'];
         $post->cover = $data['cover'];
         $post->data = $data['data'];
+        $post->category_id=$data['category_id'];
         
         //$post->brand_new = key_exists('brand_new', $data) ? true: false;
         $post->save();  // salva nel database

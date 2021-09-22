@@ -32,6 +32,21 @@
         </div>
 
         <div class="form-group">
+            <label for="category">Category</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="category_id">Options</label>
+                </div>
+                <select class="custom-select" id="category_id" name="category_id">
+                    <option selected>Choose...</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="data">Data :</label>
             <input type="date" class="form-control" name="data" id="data">
         </div>
