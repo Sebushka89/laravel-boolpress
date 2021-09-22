@@ -12,4 +12,8 @@ class post extends Model
         'cover',
         'data'
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
