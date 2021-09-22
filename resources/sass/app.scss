@@ -10,7 +10,7 @@
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
 body{
-    background-color: cornflowerblue;
+    background-color: goldenrod;
     .card-img-top{
         padding-top: 15px;
         height: 205px;
@@ -31,6 +31,7 @@ body{
 
     .table th, .table td {
             vertical-align: middle!important;
+            padding:6px!important;
         img {
             width: 200px;
             height: 150px;

@@ -12333,7 +12333,7 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: cornflowerblue;
+  background-color: goldenrod;
 }
 
 body .card-img-top {
@@ -12359,6 +12359,7 @@ body .yellow {
 .posts-container .table th,
 .posts-container .table td {
   vertical-align: middle !important;
+  padding: 6px !important;
 }
 
 .posts-container .table th img,
