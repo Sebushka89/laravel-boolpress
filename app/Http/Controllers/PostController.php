@@ -99,7 +99,8 @@ class PostController extends Controller
      */
     public function edit(post $post)
     {
-        return view('posts.edit', compact('post'));    }
+        $categories = Category::all();
+        return view('posts.edit', compact('post', 'categories'));    }
 
     /**
      * Update the specified resource in storage.
@@ -118,6 +119,7 @@ class PostController extends Controller
         $post->author = $data['author'];
         $post->cover = $data['cover'];
         $post->data = $data['data'];
+        $post->category_id=$data['category_id'];
         $post->save();
         //$this->fillAndSavePost($post, $data);
 
